@@ -44,7 +44,7 @@ if ( !class_exists( 'EDD_GitHub_Updater' ) ):
 
 			$this->set_defaults();
 
-			if ( ( defined('WP_DEBUG') && WP_DEBUG ) || ( defined('WP_GITHUB_FORCE_UPDATE') || WP_GITHUB_FORCE_UPDATE ) )
+			if ( ( defined('EDD_GITHUB_FORCE_UPDATE') && EDD_GITHUB_FORCE_UPDATE ) || ( defined('WP_GITHUB_FORCE_UPDATE') || WP_GITHUB_FORCE_UPDATE ) )
 				$this->delete_transients();
 
 			add_filter( 'pre_set_site_transient_update_plugins', array( $this, 'api_check' ) );
